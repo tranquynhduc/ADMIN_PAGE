@@ -1,0 +1,149 @@
+.UserList{
+    padding: 25px;
+}
+.User_Add{
+    margin-bottom: 15px;
+}
+.btn-user:hover{
+  background-color: #002db3;
+}
+.header{
+  margin: 15px 2px;
+}
+.btn-user{
+   text-decoration:  none;
+    width: 30%;
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 7px 25px;
+    cursor: pointer;
+    background-color: darkblue;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  tr:hover {background-color: #ccc;}
+
+  .btn-edit{
+    margin-top: 5px;
+    border: none;
+    padding:10px 15px;
+    margin-right: 8px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+  .btn-edit:hover{
+    background-color:#1f2e2e;
+    color: white;
+  }
+
+  .custom-btn {
+    width: 80px;
+    height: 40px;
+    color:  #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+  /* 15 */
+  .btn-15 {
+    background: #4f4cf3;
+    border: none;
+    z-index: 1;
+    margin-right: 5px;
+  }
+  .btn-15:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #0d0ada;
+    border-radius: 5px;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+  }
+  .btn-15:hover {
+    color: #fff;
+  }
+  .btn-15:hover:after {
+    left: 0;
+    width: 100%;
+  }
+  .btn-15:active {
+    top: 2px;
+  }
+
+ 
+  
+  
+  /* 13 */
+  .btn-13 {
+    background-color: #e63c08;
+
+  background-image: linear-gradient(315deg, #dd5e09 0%, #c95507 74%);
+    border: none;
+    z-index: 1;
+  }
+  .btn-13:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+     background-color: #df4904;
+     background-image: linear-gradient(315deg, #9b0000 0%, #e61506 74%);
+
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+  }
+  .btn-13:hover {
+    color: rgb(241, 237, 237);
+    font-weight: bold;
+  }
+  .btn-13:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  .btn-13:active {
+    top: 2px;
+  }

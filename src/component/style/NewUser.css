@@ -1,0 +1,86 @@
+.newUserHome{
+    position: absolute;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+.newUser{
+    flex: 4;
+}
+.newUserForm{
+    display: flex;
+    flex-wrap: wrap;
+}
+.newUserItem{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 20px;
+
+}
+.newUserItem>label{
+    margin-bottom: 10px ;
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+.newUserItem>input{
+    height: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.newUserGender>input{
+    margin-top: 15px;
+
+
+    
+}
+.newUserGender>label{
+    margin: 10px;
+    font-size: 18px;
+    color: #555;
+}
+.newUserSelect{
+    height: 40px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.upAvatarIcon{
+    cursor: pointer;
+    margin-top:20px;
+    font-size: 30px;
+}
+.btn-10{
+    margin-top:15px;
+}
+.create{
+    margin-right: 20px;
+}
+
+
+ /* .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  } */
