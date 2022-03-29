@@ -29,14 +29,14 @@ function EditUser() {
 
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(id);
+
 
     const dispatch = useDispatch();
 
     const editUsers = useSelector(state => state.contactReducer);
-    console.log(editUsers);
-
-    const findEditUser = editUsers.find(editUser => editUser.id == id)
+    
+    const findEditUser = editUsers.find(editUser => editUser.id === parseInt(id))
+    console.log('findEditUser:',findEditUser);
 
 
     useEffect(() => {
@@ -50,27 +50,14 @@ function EditUser() {
             setPhone(findEditUser.phone);
             setGender(findEditUser.gender);
             setPassword(findEditUser.password);
-            setAvatar(findEditUser.avatar);
+            setAvatar(findEditUser.avatar); 
         }
     }, [findEditUser])
 
-    const hanldeAvatar = (e) => {
-        const avatar = e.target.files[0];
-        avatar.preview = URL.createObjectURL(avatar)
-        setAvatar(avatar)
-        console.log(avatar.preview);
-
-    }
-    useEffect(() => {
-        //clean
-        return () => {
-            avatar && URL.revokeObjectURL(avatar.preview)
-            console.log('da clean');
-        }
-    }, [avatar])
+ 
 
     const data = {
-        id,
+        id :parseInt(id),
         avatar,
         username,
         name,
@@ -87,10 +74,24 @@ function EditUser() {
         dispatch(update_user(data));
         navigate('/UserList')
         toast.success('Update successful !!')
-        console.log(avatar);
+      
 
     }
+    const hanldeAvatar = (e) => {
+        const avatar = e.target.files[0];
+        avatar.preview = URL.createObjectURL(avatar)
+        setAvatar(avatar)
+        console.log(avatar.preview);
 
+    }
+    
+    useEffect(() => {
+        //clean
+        return () => {
+            avatar && URL.revokeObjectURL(avatar.preview)
+            console.log(`successful clean ${findEditUser.id}`);
+        }
+    }, [avatar])
     return (
         <div>
             <div className='uer'>
@@ -104,7 +105,7 @@ function EditUser() {
                     <div className='unserContainer' onSubmit={hanldeSbumit}>
                         <div className='userShow'>
                             <div className='userShowTop'>
-                                <img src={findEditUser.avatar} alt={findEditUser.name}
+                                <img src={findEditUser.avatar} alt={findEditUser.id}
                                     className='userShowImg'
                                 />
                                 <div className='userShowTopTitle'>
@@ -114,28 +115,22 @@ function EditUser() {
                             <div className='userShowBottom'>
                                 <span className='userShowTitle' > Account Details</span>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-user userShowIcon "></i>
                                     <FcManager />  <span className='userShowInforTitle'>{findEditUser.username}</span>
                                 </div>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-calendar-day  userShowIcon"></i>
                                     <FaTransgender />  <span className='userShowInforTitle'>{findEditUser.gender}</span>
                                 </div>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-calendar-day  userShowIcon"></i>
                                     <BsCalendarDayFill />  <span className='userShowInforTitle'>{findEditUser.age}</span>
                                 </div>
                                 <span className='userShowTitle' > Contact Details</span>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-phone-square-alt userShowIcon "></i>
                                     <BsFillTelephoneFill /> <span className='userShowInforTitle'> {findEditUser.phone}</span>
                                 </div>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-envelope userShowIcon "></i>
                                     <SiGmail /><span className='userShowInforTitle'> {findEditUser.email}</span>
                                 </div>
                                 <div className='userShowInfor'>
-                                    <i className="fas fa-globe-asia "></i>
                                     <GiEarthAmerica /> <span className='userShowInforTitle'>  {findEditUser.address}</span>
                                 </div>
                             </div>
@@ -146,7 +141,7 @@ function EditUser() {
                                 <div className='userUpdateLeft'>
                                     <div className='userUpdateItem'>
                                         <label className='title_edit'>UserName:</label>
-                                        <input type='tex'
+                                        <input type='text'
                                             value={username}
                                             placeholder={findEditUser.username}
                                             onChange={(e) => setUsername(e.target.value)}
@@ -154,15 +149,15 @@ function EditUser() {
                                     </div>
                                     <div className='userUpdateItem'>
                                         <label className='title_edit'>FullName:</label>
-                                        <input type='tex'
+                                        <input type='text'
                                             value={name}
-                                            placeholder={findEditUser.name}
+                                            placeholder={findEditUser.name}s
                                             onChange={(e) => setName(e.target.value)}
                                             className='userUpdateInput' />
                                     </div>
                                     <div className='userUpdateItem'>
                                         <label className='title_edit'  >Age:</label>
-                                        <input type='tex'
+                                        <input type='number'
                                             value={age}
                                             placeholder={findEditUser.age}
                                             onChange={(e) => setAge(e.target.value)}
@@ -170,7 +165,7 @@ function EditUser() {
                                     </div>
                                     <div className='userUpdateItem'>
                                         <label className='title_edit'>Email:</label>
-                                        <input type='tex'
+                                        <input type='text'
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                             placeholder={findEditUser.email}
@@ -178,7 +173,7 @@ function EditUser() {
                                     </div>
                                     <div className='userUpdateItem'>
                                         <label className='title_edit' >Phone:</label>
-                                        <input type='tex'
+                                        <input type='number'
                                             value={phone}
                                             onChange={(e) => setPhone(e.target.value)}
                                             placeholder={findEditUser.phone}
@@ -201,8 +196,8 @@ function EditUser() {
                                     </div>
                                 </div>
                                 <div className='userUpdateRight'>
-                                    <div className='userUpdateUpload'>
-                                       <img className='userUpdateImg' src={avatar} alt={findEditUser.name} />
+                                    <div className='userUpdateUpload'>            
+                                     {avatar.preview ? ( <img className='userUpdateImg' src={avatar.preview} alt={avatar.id} /> ) : ( <img className='userUpdateImg' src={findEditUser.avatar} alt={findEditUser.id} /> )} 
                                         <label htmlFor='file'> <FcUpload className='userUpdateIcon' /></label>
                                         <input type='file' id='file' style={{ display: 'none' }} onChange={hanldeAvatar} />
                                     </div>

@@ -1,12 +1,18 @@
 .dashboard {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     flex: 1;
+    
 }
  .dashboardWapper {
-    height: 91vh ;
+    height: 100vh ;
     padding: 20px;
     flex:1;
-    color: #555;
-    box-shadow: 10px 5px 5px #ccc;
+    color: #ccc;
+    -webkit-box-shadow: 3px 10px 0px 0px rgba(161,161,161,0.54);
+    -moz-box-shadow: 3px 10px 0px 0px rgba(161,161,161,0.54);
+    box-shadow: 3px 0px 0px 0px rgba(161,161,161,0.54);
     
 }
 

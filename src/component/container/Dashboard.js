@@ -20,7 +20,7 @@ function Dashboard() {
             <Link className='dashboardListItem' to='/UserList'>
               <GrUser className='icon'/> Users
             </Link>
-            <Link className='dashboardListItem' to='/Addproduct'>
+            <Link className='dashboardListItem' to='/ProductList'>
               <FaLuggageCart className='icon' />  Products
             </Link>
             <Link className='dashboardListItem' to='/About'>

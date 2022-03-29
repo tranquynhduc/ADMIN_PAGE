@@ -1,0 +1,44 @@
+.EditProduct{
+/*    display:flex; */
+    margin-left: 40px;
+}
+
+.ImageProduct{ 
+    width: 80%;
+}
+.updatePro{
+   margin-left:100px;
+}
+.userUpdateButton{
+    margin-right:15px;
+}
+.ProductUpdateItem{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    
+    width: 100%;
+}
+.ProductUpdatedetail{
+    outline: none;
+    border: none;
+    margin-top:  10px;
+    color: #6a6a48;
+    font-size: 15px;
+    text-align: justify;
+}
+.ProductUpdateInput{
+    border: none;
+    width: 500px;
+    border-bottom: 1px solid #89895d;
+    outline: none;
+    margin-left: 5px;
+    height:50px;
+    color: #6a6a48;
+}  
+
+.titleImageProduct{
+  float: right;
+  margin-left: 10px;
+
+}

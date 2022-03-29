@@ -1,13 +1,12 @@
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../../style/UserList.css';
+import React from 'react';
 import { AiOutlineUserAdd } from 'react-icons/ai';
-import { useSelector, useDispatch } from 'react-redux';
-import { contactReducer } from './../../../redux/Reducer';
 import { GrUpdate } from 'react-icons/gr';
-import { delete_user } from '../../../redux/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { delete_user } from '../../../redux/Action';
+import '../../style/UserList.css';
 
 
 function UserList() {
@@ -17,8 +16,8 @@ function UserList() {
  
 
   const handleDeleteItem = (id) => {
-    dispatch(delete_user(id)) 
-    toast.success('Successful delete !!')
+    dispatch(delete_user(id)) ;
+    toast.success('Successful delete !!');
 
   }
   return (
@@ -40,7 +39,7 @@ function UserList() {
               <th scope="col">Phone</th>
               <th scope="col">Email</th>
               <th scope="col">Address</th>
-              <th scope="col">Password</th>
+             {/*  <th scope="col">Password</th> */}
               <th scope="col"><GrUpdate /></th>
             </tr>
           </thead>
@@ -62,7 +61,7 @@ function UserList() {
               return (
                 <tr className="table-active" key={id}>
                   <th scope="row" align="center">{id}</th>
-                  <td><img src={avatar} className='topAvatar' alt={username} /></td>
+                  <td><img src={avatar} className='topAvatar' alt={id} /></td>
                   <td>{username}</td>
                   <td>{name}</td>
                   <td>{gender}</td>
@@ -70,7 +69,7 @@ function UserList() {
                   <td>{phone}</td>  
                   <td>{email}</td>
                   <td>{address}</td>
-                  <td >{password}</td>
+                 {/*  <td>{password}</td> */}
                   <td >
                     <Link to={`/EditUser/${id}`}><button className="custom-btn btn-15">Edit</button></Link>
                     <button className="custom-btn btn-13" onClick={() => handleDeleteItem(id)}>Delete</button>

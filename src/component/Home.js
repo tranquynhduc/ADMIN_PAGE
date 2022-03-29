@@ -11,6 +11,9 @@ import UserList from './container/User/UserList';
 import EditUser from './container/User/EditUser';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AdminHome from './container/AdminHome';
+import ProductList from './container/prooduct/ProductList';
+import EditProduct from './container/prooduct/EditProduct';
 function Home() {
     return (
         <div>
@@ -18,12 +21,15 @@ function Home() {
             <ToastContainer/>
             <div className='container'>
                 <Dashboard />
-                <div className='other'>
+                <div className='pr_other'>
                     <Routes>
+                        <Route path='' element={<AdminHome/>}/>
                         <Route path='/UserList' element={<UserList />} />
                         <Route path='/NewUser' element={<NewUser />} />
                         <Route path='/EditUser/:id' element={<EditUser />} />
-                        <Route path='/Addproduct' element={<AddProduct />} />
+                        <Route path='/ProductList' element={<ProductList />} />
+                        <Route path='/AddProduct' element={<AddProduct />} />
+                        <Route path='/EditProduct/:id' element={<EditProduct />} />
                         <Route path='/About' element={<About />} />
                     </Routes>
                 </div>

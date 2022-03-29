@@ -16,7 +16,6 @@ function NewUser() {
     const [address, setAddress] = useState('');
     const [gender, setGender] = useState('male');
     const [age, setAge] = useState('');
-
     const addUser = useSelector(state => state.contactReducer);
     const dispatch = useDispatch()
 
@@ -39,7 +38,7 @@ function NewUser() {
     }
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     const hanldeSubmit = (e) => {
-        if(!username ||!name ||!gender ||!age ||!email ||!password ||!phone||!address ){
+       /*   if(!username ||!name ||!gender ||!age ||!email ||!password ||!phone||!address ){
             return(toast.warning(`Please enter full information !!!`))
         }
         if(!regex.test(email)){
@@ -50,15 +49,13 @@ function NewUser() {
             return(toast.warning(`Please enter the correct phone number format (10 numbers) !!!`))
 
         }
-
+ */
         e.preventDefault();
         dispatch(add_user(data));
         navigate('/UserList');
         toast.success('Successfully added new user !!')
        
     }
-
-
     const hanldeChangeImg = (e) => {
         const file = e.target.files[0];
         file.preview = URL.createObjectURL(file);
@@ -88,6 +85,7 @@ function NewUser() {
                                 <input type='file' id='file' style={{ display: 'none' }} onChange={hanldeChangeImg} />
                             </div>
                         </div>
+            
                     </div>
                     <form className='newUserForm' >
                         <div className='newUserItem'>
@@ -108,11 +106,11 @@ function NewUser() {
                         </div>
                         <div className='newUserItem'>
                             <label>Phone</label>
-                            <input type='text' placeholder='+84 (00 000 000)' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            <input type='number' placeholder='+84 (00 000 000)' value={phone} onChange={(e) => setPhone(e.target.value)} />
                         </div>
                         <div className='newUserItem'>
                             <label>Age</label>
-                            <input type='text' placeholder='Age' value={age} onChange={(e) => setAge(e.target.value)} />
+                            <input type='number' placeholder='Age' value={age} onChange={(e) => setAge(e.target.value)} />
                         </div>
 
                         <div className='newUserItem'>

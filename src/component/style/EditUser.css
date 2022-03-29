@@ -90,9 +90,11 @@
     margin-left: 10px;
 }
 .userUpdateImg{
+    margin-left: 30px;
     width: 100px;
     height: 100px;
-    margin-right: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
     object-fit: cover;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -144,6 +146,7 @@
     
 }
 .userUpdateButton{
+    margin-left: 20px;
     width: 200px;
 }
 .userUpdateButton:hover{

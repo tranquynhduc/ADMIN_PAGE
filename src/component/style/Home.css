@@ -4,6 +4,7 @@
 }
 
 
-.other {
+.pr_other {
+    display: flex; flex-wrap: wrap;
     flex: 4;
 }
